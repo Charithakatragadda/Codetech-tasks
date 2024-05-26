@@ -1,5 +1,0 @@
-#histogram for distribution of closing prices
-plt.figure(figsize=(10, 5))
-sns.histplot(df['Close'], kde=True)
-plt.title('Distribution of Closing Prices')
-plt.show()
