@@ -1,5 +1,0 @@
-#Detecting Outliers
-plt.figure(figsize=(10, 5))
-sns.boxplot(x=df['Close'])
-plt.title('Box Plot of Closing Prices')
-plt.show()
