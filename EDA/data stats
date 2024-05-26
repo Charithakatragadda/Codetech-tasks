@@ -1,0 +1,66 @@
+EXPLORATORY DATA ANALYSIS:
+
+1.
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+df=pd.read_csv('/content/Market.csv')
+# Display the first few rows
+print(df.head())
+
+Output 1:
+	 Index        Date        Open        High         Low       Close  \
+0   NYA  12/31/1965  528.690002  528.690002  528.690002  528.690002   
+1   NYA    1/3/1966  527.210022  527.210022  527.210022  527.210022   
+2   NYA    1/4/1966  527.840027  527.840027  527.840027  527.840027   
+3   NYA    1/5/1966  531.119995  531.119995  531.119995  531.119995   
+4   NYA    1/6/1966  532.070007  532.070007  532.070007  532.070007   
+
+    Adj Close  Volume  
+0  528.690002     0.0  
+1  527.210022     0.0  
+2  527.840027     0.0  
+3  531.119995     0.0  
+4  532.070007     0.0  
+
+
+2.
+# Summary statistics
+print(df.describe())
+# Check for missing values
+print(df.isnull().sum())
+#remove string columns
+df = df[df['Close'].apply(lambda x: isinstance(x, (int, float)))]
+
+Output 2:
+
+                Open           High            Low          Close  \
+count  110253.000000  110252.000000  110251.000000  110250.000000   
+mean     7658.561932    7704.538416    7608.129749    7657.740822   
+std      9011.455529    9066.605458    8954.536718    9011.555549   
+min        54.869999      54.869999      54.869999      54.869999   
+25%      1855.060059    1864.687470    1844.015015    1855.347473   
+50%      5194.399902    5226.750000    5154.299805    5194.889892   
+75%     10134.299810   10207.827635   10060.369630   10134.867430   
+max     68775.062500   69403.750000   68516.992190   68775.062500   
+
+           Adj Close        Volume  
+count  110244.000000  1.102530e+05  
+mean     7657.982529  1.273975e+09  
+std      9011.723572  4.315783e+09  
+min        54.869999  0.000000e+00  
+25%      1855.057556  0.000000e+00  
+50%      5195.699951  4.329000e+05  
+75%     10135.512452  1.734314e+08  
+max     68775.062500  9.440374e+10  
+Index           0
+Date            0
+Open         2204
+High         2205
+Low          2206
+Close        2207
+Adj Close    2213
+Volume       2204
+dtype: int64
+
