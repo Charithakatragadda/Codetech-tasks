@@ -1,0 +1,5 @@
+#scatter plot for open vs close prices
+plt.figure(figsize=(10, 5))
+sns.scatterplot(x='Open', y='Close', data=df)
+plt.title('Open vs. Close Prices')
+plt.show()
