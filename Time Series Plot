@@ -1,7 +1,0 @@
-#Time Series Plot of Closing Prices
-plt.figure(figsize=(14, 7))
-plt.plot(df['Close'])
-plt.title('Time Series of Closing Prices')
-plt.xlabel('Date')
-plt.ylabel('Closing Price')
-plt.show()
